@@ -11,7 +11,7 @@
     "signatureVersions":["0", "1", "2"],
     "xmlNamespace":"https://cp.cloud.nifty.com/api/"
   },
-  "datatypes":{
+  "shapes":{
     "SecurityGroup":{
       "type":"String",
       "locationName":"SecurityGroup"
@@ -100,7 +100,7 @@
     "InstanceNetworkInterfaceSpecificationList":{
       "type":"list",
       "member":{
-        "type":"InstanceNetworkInterfaceSpecification",
+        "shape":"InstanceNetworkInterfaceSpecification",
         "locationName":"item"
       }
     },
@@ -112,18 +112,18 @@
     "GroupSetList":{
       "type":"list",
       "member":{
-        "type":"Group",
+        "shape":"Group",
         "locationName":"item"
       }
     },
     "InstanceSet":{
-      "type":"RunningInstancesItemTypeList",
+      "shape":"RunningInstancesItemTypeList",
       "locationName":"InstanceSet"
     },
     "RunningInstancesItemTypeList":{
       "type":"list",
       "member":{
-        "type":"RunningInstancesItemType",
+        "shape":"RunningInstancesItemType",
         "locationName":"item"
       }
     },
@@ -154,7 +154,7 @@
     "InstanceBlockDeviceMappingList":{
       "type":"list",
       "member":{
-        "type":"BlockDeviceMapping",
+        "shape":"BlockDeviceMapping",
         "locationName":"item"
       }
     },
@@ -166,7 +166,7 @@
           "locationName":"deviceName"
         },
         "Ebs":{
-          "type":"Ebs",
+          "shape":"Ebs",
           "locationName":"ebs"
         },
         "InstanceLifecycle":{
@@ -191,11 +191,11 @@
           "locationName":"status"
         },
         "AttachTime":{
-          "type":"DateTime",
+          "shape":"DateTime",
           "locationName":"attachTime"
         },
         "DeleteOnTermination":{
-          "type":"Boolean",
+          "shape":"Boolean",
           "locationName":"deleteOnTermination"
         }
       }
@@ -204,7 +204,7 @@
       "type":"structure",
       "members":{
         "AttachmentId":{
-          "type":"None",
+          "type":"String",
           "locationName":"attachmentID"
         },
         "DeviceIndex":{
@@ -216,7 +216,7 @@
           "locationName":"status"
         },
         "AttachTime":{
-          "type":"DateTime",
+          "shape":"DateTime",
           "locationName":"attachTime"
         },
         "DeleteOnTermination":{
@@ -250,11 +250,11 @@
       "type":"structure",
       "members":{
         "Association":{
-          "type":"InstanceNetworkInterfaceAssociation",
+          "shape":"InstanceNetworkInterfaceAssociation",
           "locationName":"association"
         },
         "Primary":{
-          "type":"Boolean",
+          "shape":"Boolean",
           "locationName":"primary"
         },
         "PrivateDnsName":{
@@ -270,14 +270,14 @@
     "InstancePrivateIpAddressesSetList":{
       "type":"list",
       "member":{
-        "type":"InstancePrivateIpAddressesSet",
+        "shape":"InstancePrivateIpAddressesSet",
         "locationName":"item"
       }
     },
     "NetworkInterfaceList":{
       "type":"list",
       "member":{
-        "type":"NetworkInterface",
+        "shape":"NetworkInterface",
         "locationName":"item"
       }
     },
@@ -341,15 +341,15 @@
           "locationName":"groupSet"
         },
         "Attachment":{
-          "type":"InstanceNetworkInterfaceAttachmentType",
+          "shape":"InstanceNetworkInterfaceAttachmentType",
           "locationName":{"attachment"}
         },
         "Association":{
-          "type":"InstanceNetworkInterfaceAssociation",
+          "shape":"InstanceNetworkInterfaceAssociation",
           "locationName":{"association"}
         },
         "PrivateIpAddressesSet":{
-          "type":"InstancePrivateIpAddressesSetList",
+          "shape":"InstancePrivateIpAddressesSetList",
           "locationName":"privateIpAddressSet"
         }
       }
@@ -361,7 +361,7 @@
     "ProductCodesSetType":{
       "type":"list",
       "member":{
-        "type":"ProductCodesSetItemType",
+        "shape":"ProductCodesSetItemType",
         "locationName": "item"
       }
     },
@@ -394,7 +394,7 @@
           "locationName":"imageId"
         },
         "InstanceState":{
-          "type":"InstanceStateType",
+          "shape":"InstanceStateType",
           "locationName":"instanceState"
         },
         "PrivateDnsName":{
@@ -422,19 +422,19 @@
           "locationName":"amiLaunchIndex"
         },
         "ProductCodes":{
-          "type":"ProductCodesSetType",
+          "shape":"ProductCodesSetType",
           "locationName":"productCodes"
         },
         "InstanceType":{
-          "type":"InstanceType",
+          "shape":"InstanceType",
           "locationName":"instanceType"
         },
         "LaunchTime":{
-          "type":"DateTime",
+          "shape":"DateTime",
           "locationName":"launchTime"
         },
         "Placement":{
-          "type":"PlacementResponseType",
+          "shape":"PlacementResponseType",
           "locationName":"placement"
         },
         "KernelId":{
@@ -450,7 +450,7 @@
           "locationName":"platform"
         },
         "Monitoring":{
-          "type":"InstanceMonitoringStateType",
+          "shape":"InstanceMonitoringStateType",
           "locationName":"monitoring"
         },
         "SubnetId":{
@@ -478,7 +478,7 @@
           "locationName":"ipAddressV6"
         },
         "StateReason":{
-          "type":"StateReasonType",
+          "shape":"StateReasonType",
           "locationName":"stateReason"
         },
         "Architecture":{
@@ -494,7 +494,7 @@
           "locationName":"rootDeviceName"
         },
         "BlockDeviceMapping":{
-          "type":"InstanceBlockDeviceMappingList",
+          "shape":"InstanceBlockDeviceMappingList",
           "locationName":"blockDeviceMapping"
         },
         "AccountingType":{
@@ -514,7 +514,7 @@
           "locationName":"description"
         },
         "NetworkInterfaceSet":{
-          "type":"NetworkInterfaceList",
+          "shape":"NetworkInterfaceList",
           "locationName":"networkInterfaceSet"
         }
       }
@@ -528,14 +528,14 @@
         "ImageId":{"type":"String"},
         "KeyName":{"type":"String"},
         "SecurityGroups":{
-          "type":"SecurityGroupList",
+          "shape":"SecurityGroupList",
           "locationName":"SecurityGroup"
         },
         "UserData":{"type":"String"},
-        "InstanceType":{"type":"InstanceType"},
+        "InstanceType":{"shape":"InstanceType"},
         "Placement.AvailabilityZone ":{"type":"String"},
         "DisableApiTermination":{
-          "type":"Boolean",
+          "shape":"Boolean",
           "locationName":"disableApiTermination"
         },
         "Admin":{
@@ -557,7 +557,7 @@
           ]
         },
         "Agreement":{
-          "type":"Boolean",
+          "shape":"Boolean",
           "locationName":"agreement"
         },
         "Description":{
@@ -565,7 +565,7 @@
           "locationName":"description"
         },
         "NetworkInterfaces":{
-          "type":"InstanceNetworkInterfaceSpecificationList",
+          "shape":"InstanceNetworkInterfaceSpecificationList",
           "locationName":"networkInterface"
         }
       }
@@ -586,11 +586,11 @@
           "locationName":"ownerId"
         },
         "groupSet":{
-          "type":"GroupSetList",
+          "shape":"GroupSetList",
           "locationName":"groupSet"
         },
         "InstanceSet":{
-          "type":"InstanceSetList",
+          "shape":"InstanceSetList",
           "locationName":"instanceSet"
         },
         "RequesterId":{
@@ -607,8 +607,8 @@
         "methods":["POST"],
         "requestUri":"/"
       },
-      "request":{"type":"RunInstancesRequest"},
-      "response":{"type":"RunInstancesResponse"}
+      "request":{"shape":"RunInstancesRequest"},
+      "response":{"shape":"RunInstancesResponse"}
     }
   },
   "errorCodes":{

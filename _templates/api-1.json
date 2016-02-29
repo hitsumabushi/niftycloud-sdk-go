@@ -10,7 +10,7 @@
     "signatureVersions":[""],
     "xmlNamespace":""
   },
-  "datatypes":{
+  "shapes":{
     "__type__":{
       "type":"",
       "required":[
@@ -43,7 +43,7 @@
           "type":"structure",   # <- 構造体も書けるようにしておく
           "members":{
             "member_1":{
-              "type": "__attribute_3__",
+              "shape": "__attribute_3__",
               "locationName": "member_1"
             },
             "member_2":{
