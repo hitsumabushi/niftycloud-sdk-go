@@ -1,0 +1,62 @@
+{
+  "schemeVersion":"1.0",
+  "metadata":{
+    "apiVersion":"2.1",
+    "endpointprefix":"/",
+    "jsonVersion":"1.0",
+    "protocols":["json", "xml"],
+    "serviceFullName":"",
+    "serviceAbbreviation":"",
+    "signatureVersions":[""],
+    "xmlNamespace":""
+  },
+  "datatypes":{
+    "__type__":{
+      "type":"",
+      "required":[
+        "__attribute_1__"
+      ],
+      "members":{
+        "__attribute_1__":{
+          "type":"String",  # <- (ある程度)自由な文字列の場合には、大文字から始める
+          "locationName":"attribute_1_locationName"
+        },
+        __attribute_2__:{
+          "type":"string",  # <- 選択式など特別な制限がある場合には、小文字から始める
+          "locationName":"attribute_2_locationName",
+          "enum": [
+            "one",
+            "two"
+          ]
+        },
+        __attribute_3__:{
+          "type":"list",
+          "member": {     # <- リストの要素は1タイプとする。単数形。
+            "type": "String",
+            "locationName": "listAttribute",
+            "limitation": {
+              "chars": "[a-zA-Z0-9]",
+              "cond": "__なにか良い書き方を考えたい...__"
+          }
+        },
+        "__attribute_4__":{
+          "type":"structure",   # <- 構造体も書けるようにしておく
+          "members":{
+            "member_1":{
+              "type": "__attribute_3__",
+              "locationName": "member_1"
+            },
+            "member_2":{
+              "type": "String",
+              "locationName": "member_2"
+            }
+          }
+        }
+      }
+    }
+  },
+  "operatoins":{
+  },
+  "errorCodes":{
+  }
+}
